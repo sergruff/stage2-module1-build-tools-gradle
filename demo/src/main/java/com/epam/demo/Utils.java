@@ -6,6 +6,14 @@ import java.util.List;
 
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
-        return args.stream().allMatch(StringUtils::isPositiveNumber);
+        if (args.isEmpty()){
+            return false;
+        }
+        for (String s : args) {
+            if (!StringUtils.isPositiveNumber(s)){
+                return false;
+            }
+        }
+        return true;
     }
 }
